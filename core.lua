@@ -184,7 +184,9 @@ function suit:enterFrame()
 	end
 
 	self.hovered_last, self.hovered = self.hovered, nil
-	self:updateMouse(love.mouse.getX(), love.mouse.getY(), love.mouse.isDown(1))
+	-- TODO refactor to be compatible with user-updateMouse-usage
+	-- when this is user-handled, widgets seem to have two hover/target areas
+	-- self:updateMouse(love.mouse.getX(), love.mouse.getY(), love.mouse.isDown(1))
 	self.key_down, self.textchar = nil, ""
 	self:grabKeyboardFocus(NONE)
 	self.hit = nil
